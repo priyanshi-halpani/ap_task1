@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | AppDost</title>
+  <link rel="stylesheet" href="services.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    /* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  color: #e6edf3;
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+nav.scuh {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgb(252, 252, 252);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav .logo {
+  height: 40px;
+}
+
+.s-right a {
+  color: #e6edf3;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.s-right a:hover,
+.s-right a.active {
+  color: #00c2ff;
+}
+
+.sbtn {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .s-right {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(13, 17, 23, 0.95);
+    flex-direction: column;
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  .s-right.open {
+    display: flex;
+  }
+  .sbtn {
+    display: block;
+  }
+}
+
+/* ===== HERO ===== */
+.hero {
+  height: 90vh;
+  background: url("services-bg.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #16b5ff, #615ae4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: #bfc6d2;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #16b5ff, #615ae4);
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(97, 90, 228, 0.3);
+}
+
+/* ===== SERVICES ===== */
+.services {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: #0d1117;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #16b5ff, #615ae4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  color: #9ca3af;
+  margin-bottom: 3rem;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 194, 255, 0.15);
+}
+
+.service-card .icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #00c2ff;
+}
+
+.service-card p {
+  color: #bfc6d2;
+  font-size: 0.95rem;
+}
+
+/* ===== CTA ===== */
+.cta {
+  background: linear-gradient(135deg, #0e9ab2, #16b5ff);
+  text-align: center;
+  color: white;
+  padding: 5rem 2rem;
+}
+
+.cta-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-outline {
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #0e9ab2;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #0a0e13;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.footer-logo {
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.footer-content p {
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+}
+
+.socials a img {
+  width: 24px;
+  margin: 0 0.5rem;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.socials a img:hover {
+  opacity: 1;
+}
+
+  </style>
+
+
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="scuh">
+    <img src="logo.png" alt="AppDost Logo" class="logo" />
+    <div class="s-right" id="nav-links">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="sbtn" id="menu-btn">☰</button>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Our Services</h1>
+      <p>Empowering your business with world-class technology solutions that drive innovation, efficiency, and success.</p>
+      <a href="#services" class="btn-primary">Explore Services</a>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">What We Offer</h2>
+      <p class="section-subtitle">From concept to launch — we design, build, and support solutions that grow with you.</p>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="icon"><img src="icons/app.svg" alt=""></div>
+          <h3>Android App Development</h3>
+          <p>Build scalable, high-performance mobile apps tailored to your business goals.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon"><img src="icons/web.svg" alt=""></div>
+          <h3>Web Solutions</h3>
+          <p>Modern, responsive websites and custom platforms optimized for speed and impact.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon"><img src="icons/uiux.svg" alt=""></div>
+          <h3>UI/UX Design</h3>
+          <p>Designing intuitive interfaces that deliver exceptional user experiences.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon"><img src="icons/cloud.svg" alt=""></div>
+          <h3>Cloud Solutions</h3>
+          <p>Seamless cloud migrations, architecture, and optimization to scale your business.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon"><img src="icons/crm.svg" alt=""></div>
+          <h3>CRM Development</h3>
+          <p>Streamlined customer management systems to enhance relationships and sales.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon"><img src="icons/security.svg" alt=""></div>
+          <h3>Cybersecurity</h3>
+          <p>Protect your digital assets with cutting-edge security audits and solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="cta">
+    <div class="cta-content">
+      <h2>Let’s Build Something Amazing Together</h2>
+      <p>Collaborate with our expert team to create innovative solutions that set you apart from the competition.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn-primary">Get Started</a>
+        <a href="portfolio.html" class="btn-outline">View Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-content">
+      <img src="logo.png" alt="AppDost Logo" class="footer-logo" />
+      <p>Empowering businesses through technology. © 2025 AppDost. All rights reserved.</p>
+      <div class="socials">
+        <a href="#"><img src="icons/facebook.svg" alt=""></a>
+        <a href="#"><img src="icons/linkedin.svg" alt=""></a>
+        <a href="#"><img src="icons/instagram.svg" alt=""></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Nav
+    const menuBtn = document.getElementById("menu-btn");
+    const navLinks = document.getElementById("nav-links");
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+  </script>
+
+</body>
+</html>

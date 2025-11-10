@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AppDost Complete IT Solutions</title>
+
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        
+      <nav id="scuh" class="scuh">
+    <div class="s-left">
+      <img src="logo.png" alt="AppDost" class="logo" />
+    </div>
+    <div class="s-right" id="slinks">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="joinus.html">Join Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button id="sbtn" class="sbtn" aria-label="toggle menu">☰</button>
+  </nav>
+
+
+
+  <!-- FOOTER -->
+  <footer id="contact" class="footer">
+    <div class="wrap fwrap">
+      <div class="fcol">
+        <img src="logo.png" alt="AppDost" class="flogo" />
+        <p>Complete IT Solutions: Driving innovation for a better digital future.</p>
+        <p class="copy">&copy; 2025 AppDost. All rights reserved.</p>
+      </div>
+
+      <div class="fcol">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#services">Portfolio</a></li>
+        </ul>
+      </div>
+
+      <div class="fcol">
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="mailto:contact@appdost.com">Email: contact@appdost.com</a></li>
+          <li><a href="tel:+1234567890">Phone: +1 (234) 567-890</a></li>
+          <li><a href="#contact">Request a Quote</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="fcol">
+        <h4>Follow Us</h4>
+        <div class="soc">
+          <a href="#" class="s">F</a>
+          <a href="#" class="s">T</a>
+          <a href="#" class="s">L</a>
+        </div>
+        <a class="btn secondary" href="#team">Join Our Team</a>
+      </div>
+    </div>
+  </footer>
+
+
+        <script>
+            document.getElementById('navToggle').addEventListener('click', function() {
+                var navLinks = document.querySelector('.navlinks');
+                navLinks.classList.toggle('active');
+            });
+ const sbtn = document.getElementById('sbtn');
+    const slinks = document.getElementById('slinks');
+    sbtn.addEventListener('click', () => slinks.classList.toggle('open'));
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const t = a.getAttribute('href');
+        if (t.length>1) {
+          e.preventDefault();
+          document.querySelector(t).scrollIntoView({behavior:'smooth',block:'start'});
+          // close nav on mobile
+          slinks.classList.remove('open');
+        }
+      });
+    });
+
+    // Fade-in on scroll helper
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          obs.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.15});
+
+    document.querySelectorAll('.card, .wrap, .trusted, .about, .cbox, .hero-feat .feat').forEach(el=>{
+      obs.observe(el);
+    });
+
+
+        </script>
+
+    </body>
+</html>
