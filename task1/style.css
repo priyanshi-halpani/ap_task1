@@ -312,12 +312,15 @@ min-height: 150px;
 .about{padding:3.4rem 1rem;}
 .wrap{max-width:1200px;margin:0 auto;padding:0 1rem;text-align:center;}
 .about h2{font-size:1.9rem;margin-bottom:0.6rem;color:#000000;}
-.brand{
-  color:#4f46e5;
-  font-weight:800;
-  background:linear-gradient(90deg,#4f46e5,#06b6d4);
-  color:transparent;
+.brand {
+  font-weight: 800;
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+  -webkit-background-clip: text; /* clips gradient to text shape */
+  -webkit-text-fill-color: transparent; /* makes the text itself transparent */
+  background-clip: text; /* for modern browsers */
+  color: transparent; /* fallback */
 }
+
 
 /* ---------- SERVICES (grid6) ---------- */
 .services{padding:2.4rem 1rem 4rem;}
@@ -347,7 +350,7 @@ min-height: 150px;
 .trusted{padding:2.4rem 1rem;}
 .clients{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
 .cl{
-  background:linear-gradient(90deg,rgba(14,165,233,0.06),rgba(79,70,229,0.04));
+  background:linear-gradient(90deg,rgba(34, 71, 87, 0.06),rgba(79,70,229,0.04));
   padding:14px 22px;
   border-radius:10px;
   color:#062033;

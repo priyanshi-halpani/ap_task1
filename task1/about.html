@@ -1,469 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>About — AppDost | Complete IT Solutions</title>
-  <link rel="stylesheet" href="style.css" />
-<style>
-/* =====================
-   APPDOST GLOBAL STYLE
-   ===================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #0d1117;
-  color: #e6edf3;
-  line-height: 1.6;
-}
-
-/* =====================
-   NAVBAR
-   ===================== */
-
-nav.scuh {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 1rem 2rem;
-  background: rgba(13, 17, 23, 0.8);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 999;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-nav .logo {
-  height: 40px;
-}
-
-.s-right a {
-  color: #e6edf3;
-  margin: 0 1rem;
-  text-decoration: none;
-  transition: 0.3s ease;
-  font-weight: 500;
-}
-
-.s-right a:hover,
-.s-right a.active {
-  color: #00c2ff;
-}
-
-.sbtn {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: #e6edf3;
-  cursor: pointer;
-}
-
-/* =====================
-   HERO SECTION
-   ===================== */
-
-.hero {
-  position: relative;
-  height: 95vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
-
-.hero-bg {
-  background: url('about-bg.jpg') center/cover no-repeat;
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: -1;
-}
-
-.hero-inner {
-  max-width: 900px;
-  padding: 0 1rem;
-}
-
-.badge {
-  display: inline-block;
-  padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  font-size: 0.9rem;
-  color: #00c2ff;
-  margin-bottom: 1rem;
-}
-
-.hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-}
-
-.hero-title .accent {
-  color: #00c2ff;
-}
-
-.hero-lead {
-  font-size: 1.1rem;
-  margin: 1rem auto 2rem;
-  color: #c9d1d9;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.8rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s ease;
-}
-
-.btn.primary {
-  background: #00c2ff;
-  color: #0d1117;
-}
-
-.btn.primary:hover {
-  background: #009ed0;
-}
-
-.btn.secondary {
-  border: 2px solid #00c2ff;
-  color: #00c2ff;
-}
-
-.btn.secondary:hover {
-  background: #00c2ff;
-  color: #0d1117;
-}
-
-/* =====================
-   ABOUT SECTION
-   ===================== */
-
-.about {
-  padding: 6rem 1.5rem 4rem;
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.about h2 {
-  font-size: 2.2rem;
-  margin-bottom: 1.2rem;
-}
-
-.about .muted {
-  color: #9ca3af;
-  font-size: 1.05rem;
-}
-
-/* =====================
-   SERVICES / VALUES
-   ===================== */
-
-.services {
-  padding: 5rem 2rem;
-  text-align: center;
-}
-
-.services h3 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.services .sub {
-  color: #9ca3af;
-  margin-bottom: 3rem;
-}
-
-.grid6 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-radius: 18px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
-}
-
-.card-head {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #00c2ff;
-  margin-bottom: 0.5rem;
-}
-
-/* =====================
-   TEAM / TRUSTED SECTION
-   ===================== */
-
-.trusted {
-  padding: 5rem 1rem;
-  text-align: center;
-}
-
-.trusted h3 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.trusted .sub {
-  color: #9ca3af;
-  margin-bottom: 2.5rem;
-}
-
-.clients {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.2rem;
-}
-
-.cl {
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
-  padding: 0.9rem 1.4rem;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.cl:hover {
-  background: #00c2ff;
-  color: #0d1117;
-}
-
-/* =====================
-   WHY CHOOSE US / PROJECTS
-   ===================== */
-
-.projects {
-  padding: 5rem 2rem;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.section-sub {
-  color: #9ca3af;
-  margin-bottom: 3rem;
-}
-
-.proj-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.proj-card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem 1.5rem;
-  border-radius: 18px;
-  text-align: left;
-  transition: 0.3s;
-}
-
-.proj-card h3 {
-  color: #00c2ff;
-  margin-bottom: 0.7rem;
-}
-
-.proj-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateY(-6px);
-}
-
-/* =====================
-   CTA SECTION
-   ===================== */
-
-.cta {
-  background: linear-gradient(135deg, #00c2ff, #009ed0);
-  color: #0d1117;
-  padding: 5rem 1.5rem;
-  text-align: center;
-}
-
-.ctawrap h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.ctawrap p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-.cta-buttons .btn {
-  margin: 0 0.5rem;
-}
-
-/* =====================
-   FOOTER
-   ===================== */
-
-.footer {
-  background: #0b0f14;
-  padding: 3.5rem 2rem;
-  color: #c9d1d9;
-}
-
-.fwrap {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 2rem;
-}
-
-.flogo {
-  height: 40px;
-  margin-bottom: 1rem;
-}
-
-.fcol h4 {
-  font-size: 1.1rem;
-  color: #00c2ff;
-  margin-bottom: 1rem;
-}
-
-.fcol ul {
-  list-style: none;
-}
-
-.fcol ul li {
-  margin-bottom: 0.4rem;
-}
-
-.fcol a {
-  color: #c9d1d9;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.fcol a:hover {
-  color: #00c2ff;
-}
-
-.soc .s {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.08);
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  line-height: 34px;
-  text-align: center;
-  color: #00c2ff;
-  margin-right: 0.4rem;
-  transition: 0.3s;
-}
-
-.soc .s:hover {
-  background: #00c2ff;
-  color: #0d1117;
-}
-
-.copy {
-  font-size: 0.85rem;
-  color: #666;
-  margin-top: 1rem;
-}
-
-/* =====================
-   ANIMATIONS
-   ===================== */
-
-.in {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-.card,
-.proj-card,
-.wrap,
-.about,
-.trusted {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-/* =====================
-   RESPONSIVE
-   ===================== */
-
-@media (max-width: 820px) {
-  .s-right {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #0d1117;
-    width: 220px;
-    padding: 1rem;
-    border-radius: 0 0 0 15px;
-  }
-
-  .s-right.open {
-    display: flex;
-  }
-
-  .sbtn {
-    display: block;
-  }
-
-  .hero-title {
-    font-size: 2.4rem;
-  }
-}
-
-
-</style>
-
+  <style>
+ * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-size: 1.1rem;
+      margin: 0;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #0b1220;
+      background: linear-gradient(180deg, #fbfdff 0%, #f3f7fb 100%);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.75;
+    }
+
+    /* ---------- NAV ---------- */
+    .scuh {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 1.6rem;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6));
+      box-shadow: 0 6px 18px rgba(20, 30, 50, 0.07);
+      backdrop-filter: blur(6px);
+    }
+
+    .scuh .logo {
+      height: 40px;
+    }
+
+    .s-right {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .s-right a {
+      color: #0b1220;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+      padding: 0.5rem 0.6rem;
+      border-radius: 8px;
+      transition: all 0.22s ease;
+    }
+
+    .s-right a:hover {
+      transform: translateY(-2px);
+      color: #4f46e5;
+      background: rgba(79, 70, 229, 0.06);
+    }
+
+    .sbtn {
+      display: none;
+      background: none;
+      border: 0;
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: 6px 8px;
+    }
+    /* ---------- HERO ---------- */
+    header{
+      padding:8rem 1rem 5rem;
+      text-align:center;
+      background:linear-gradient(135deg,#4f46e5,#6a5ff0);
+      color:#fff;
+      border-radius:0 0 80px 80px;
+      animation:heroGradient 6s ease infinite alternate;
+      background-size:200% 200%;
+    }
+    @keyframes heroGradient{
+      0%{background-position:0% 50%;}
+      100%{background-position:100% 50%;}
+    }
+    header h1{
+      font-size:3rem;
+      font-weight:700;
+      margin-bottom:1rem;
+    }
+    header h1 span{color:#00c2ff;}
+    header p{
+      max-width:640px;margin:0 auto 2rem;
+      font-size:1.1rem;line-height:1.6;
+    }
+    .btn{
+      display:inline-block;
+      padding:0.8rem 1.8rem;
+      border-radius:25px;
+      font-weight:600;
+      background:#fff;
+      color:#4f46e5;
+      transition:0.3s;
+    }
+    .btn:hover{
+      background:#00c2ff;
+      color:#fff;
+      box-shadow:0 0 15px rgba(0,194,255,0.5);
+    }
+
+    /* ---------- MISSION / VISION ---------- */
+    .mission{
+      padding:5rem 2rem;
+      text-align:center;
+      background:#fff;
+    }
+    .mission h2{
+      font-size:2.2rem;
+      color:#4f46e5;
+      margin-bottom:2rem;
+    }
+    .mission .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .mission .card{
+      background:#f8f9ff;
+      border:1px solid rgba(79,70,229,0.1);
+      border-radius:20px;
+      padding:2rem;
+      text-align:left;
+      transition:.4s;
+      box-shadow:0 8px 20px rgba(79,70,229,0.08);
+      opacity:0;transform:translateY(20px);
+    }
+    .mission .card.in{opacity:1;transform:translateY(0);}
+    .mission .card:hover{transform:translateY(-8px);}
+    .mission .card h3{
+      color:#4f46e5;
+      margin-bottom:0.8rem;
+    }
+
+    /* ---------- TIMELINE ---------- */
+    .timeline{
+      background:linear-gradient(135deg,#eef1ff,#e8ebff);
+      padding:5rem 2rem;
+      text-align:center;
+    }
+    .timeline h2{color:#4f46e5;margin-bottom:2rem;}
+    .timeline ul{
+      list-style:none;
+      max-width:800px;
+      margin:0 auto;
+      position:relative;
+    }
+    .timeline ul::before{
+      content:'';
+      position:absolute;
+      left:50%;
+      top:0;
+      width:3px;
+      height:100%;
+      background:#4f46e5;
+      transform:translateX(-50%);
+    }
+    .timeline li{
+      position:relative;
+      background:#fff;
+      padding:1.2rem 1.8rem;
+      border-radius:15px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+      width:calc(50% - 40px);
+      margin:2rem 0;
+      opacity:0;transform:translateY(20px);
+      transition:all .6s cubic-bezier(.2,.9,.2,1);
+    }
+    .timeline li.in{opacity:1;transform:translateY(0);}
+    .timeline li:nth-child(odd){left:0;}
+    .timeline li:nth-child(even){left:50%;}
+    .timeline li::after{
+      content:'';
+      position:absolute;
+      top:20px;
+      right:-8px;
+      width:16px;height:16px;
+      background:#4f46e5;border-radius:50%;
+    }
+    .timeline li:nth-child(even)::after{left:-8px;right:auto;}
+    .timeline h4{color:#4f46e5;margin-bottom:0.6rem;}
+    @media(max-width:820px){
+      .timeline ul::before{left:10px;}
+      .timeline li{width:calc(100% - 40px);left:20px!important;}
+      .timeline li::after{left:-18px;}
+    }
+
+    /* ---------- TEAM ---------- */
+    .team{
+      background:#fff;
+      padding:5rem 2rem;
+      text-align:center;
+    }
+    .team h2{
+      color:#4f46e5;
+      font-size:2.2rem;
+      margin-bottom:2rem;
+    }
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:2rem;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .member{
+      background:#f9f9ff;
+      border-radius:18px;
+      padding:1.5rem;
+      box-shadow:0 6px 16px rgba(79,70,229,0.08);
+      transition:.4s;
+      opacity:0;transform:translateY(20px);
+    }
+    .member.in{opacity:1;transform:translateY(0);}
+    .member:hover{transform:translateY(-6px);}
+    .member img{
+      width:100%;
+      border-radius:12px;
+      margin-bottom:1rem;
+      height:220px;
+      object-fit:cover;
+    }
+    .member h4{color:#0b1220;margin-bottom:0.3rem;}
+    .member p{color:#4f46e5;font-size:0.95rem;}
+
+    /* ---------- FOOTER (EXACT COPY FROM HOME) ---------- */
+    .footer{
+      background:linear-gradient(180deg,#4f46e5,#0b1220);
+      color:#e6eefc;
+      padding:2.6rem 1rem;
+      font-size:1.25rem;
+    }
+    .fwrap{
+      display:flex;
+      gap:2rem;
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 1rem;
+      flex-wrap:wrap;
+    }
+    .fcol{flex:1;min-width:200px;}
+    .flogo{height:36px;filter:brightness(10) invert(1);margin-bottom:10px;}
+    .footer h4{margin:0 0 10px 0;}
+    .footer a{ font-size: 1.05rem; color:rgba(255,255,255,0.9);text-decoration:none;display:inline-block;margin-bottom:6px;}
+    .footer .btn{margin-top:10px;}
+    .btn.secondary{
+      background:transparent;
+      color:#fff;
+      border:2px solid #00c2ff;
+    }
+    .btn.secondary:hover{
+      background:#00c2ff;
+      color:#0a0f2d;
+      box-shadow:0 0 15px rgba(0,194,255,0.5);
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAV -->
   <nav id="scuh" class="scuh">
     <div class="s-left">
       <img src="logo.png" alt="AppDost" class="logo" />
     </div>
     <div class="s-right" id="slinks">
       <a href="home.html">Home</a>
-      <a href="about.html" class="active">About</a>
+      <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="joinus.html">Join Us</a>
@@ -472,158 +289,69 @@ nav .logo {
     <button id="sbtn" class="sbtn" aria-label="toggle menu">☰</button>
   </nav>
 
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-
-    <div class="hero-inner">
-      <div class="badge">💡 Innovation. Technology. Transformation.</div>
-      <h1 class="hero-title">About <span class="accent">AppDost</span></h1>
-      <p class="hero-lead">
-        We are a forward-thinking IT company dedicated to transforming ideas into
-        reality. At AppDost, we blend creativity, technology, and strategy to
-        deliver digital solutions that drive growth and inspire innovation.
-      </p>
-      <div class="hero-ctas">
-        <a class="btn primary" href="contact.html">Work With Us</a>
-      </div>
-    </div>
+  <!-- HERO -->
+  <header>
+    <h1>About <span>AppDost</span></h1>
+    <p>We’re a creative tech company helping brands and businesses build their digital presence through smart, scalable, and futuristic solutions.</p>
+    <a href="contact.html" class="btn">Let’s Collaborate</a>
   </header>
 
-  <!-- WHO WE ARE -->
-  <section class="about">
-    <div class="wrap">
-      <h2>Who We Are</h2>
-      <p class="muted">
-        Founded in 2025, <strong>AppDost</strong> is a full-stack IT solutions provider offering a
-        wide range of services from mobile app development and web design to enterprise software
-        and cloud infrastructure. Our team of passionate professionals strives to create
-        impactful digital experiences that help brands grow and succeed in a rapidly changing world.
-      </p>
+  <!-- MISSION -->
+  <section class="mission">
+    <h2>Our Mission & Vision</h2>
+    <div class="grid">
+      <div class="card"><h3>Our Mission</h3><p>To revolutionize technology for businesses through innovation, creativity, and cutting-edge digital products that empower growth.</p></div>
+      <div class="card"><h3>Our Vision</h3><p>To become a globally trusted IT partner known for exceptional service, transparency, and transformative technology solutions.</p></div>
+      <div class="card"><h3>Our Values</h3><p>Innovation, integrity, and collaboration drive every step of our journey to deliver excellence and long-term value for our clients.</p></div>
     </div>
   </section>
 
-  <!-- OUR MISSION -->
-  <section class="services">
-    <div class="wrap">
-      <h3>Our Mission & Values</h3>
-      <p class="sub">Driving innovation through trust and technology</p>
-
-      <div class="grid6">
-        <div class="card glass">
-          <div class="card-head">Innovation</div>
-          <p>We continuously embrace emerging technologies to deliver creative, future-ready solutions.</p>
-        </div>
-
-        <div class="card glass">
-          <div class="card-head">Excellence</div>
-          <p>Our commitment to quality ensures every project exceeds expectations.</p>
-        </div>
-
-        <div class="card glass">
-          <div class="card-head">Integrity</div>
-          <p>We build lasting relationships with transparency and reliability at every step.</p>
-        </div>
-
-        <div class="card glass">
-          <div class="card-head">Teamwork</div>
-          <p>Our diverse, collaborative team works as one to deliver unified success.</p>
-        </div>
-
-        <div class="card glass">
-          <div class="card-head">Client-Centric</div>
-          <p>Your success is our mission — we align strategies with your vision and goals.</p>
-        </div>
-
-        <div class="card glass">
-          <div class="card-head">Growth</div>
-          <p>We empower businesses to scale sustainably with smart and secure digital solutions.</p>
-        </div>
-      </div>
-    </div>
+  <!-- TIMELINE -->
+  <section class="timeline">
+    <h2>Our Journey</h2>
+    <ul>
+      <li><h4>January 2025 — Founded</h4><p>AppDost was born with a vision to empower businesses through digital transformation in Bihar.</p></li>
+      <li><h4>March 2025 — Growth</h4><p>We expanded our team and launched services in app, web, and enterprise software development.</p></li>
+      <li><h4>October 2025 — Innovation</h4><p>Adopted cloud-first solutions and AI-based development practices to stay ahead in tech evolution.</p></li>
+    </ul>
   </section>
 
-  <!-- OUR TEAM -->
-  <section class="trusted">
-    <div class="wrap">
-      <h3>Meet Our Team</h3>
-      <p class="sub">Driven by passion, powered by expertise</p>
-      <div class="clients">
-        <div class="cl">Developers</div>
-        <div class="cl">Designers</div>
-        <div class="cl">Strategists</div>
-        <div class="cl">QA Experts</div>
-        <div class="cl">Project Managers</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE US -->
-  <section class="projects">
-    <div class="pwrap">
-      <h2 class="section-title">Why Choose AppDost?</h2>
-      <p class="section-sub">We combine creativity, technical excellence, and commitment to deliver unmatched value.</p>
-
-      <div class="proj-grid">
-        <div class="proj-card in">
-          <h3>Expertise You Can Trust</h3>
-          <p>Our developers and engineers bring years of experience in delivering complex IT solutions across industries.</p>
-        </div>
-
-        <div class="proj-card in">
-          <h3>Transparent Communication</h3>
-          <p>We ensure complete project clarity with regular updates, open feedback loops, and agile collaboration.</p>
-        </div>
-
-        <div class="proj-card in">
-          <h3>Customer First Approach</h3>
-          <p>Our clients are our partners. We take the time to understand your business and create solutions tailored to your needs.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta" id="cta">
-    <div class="ctawrap">
-      <h2>Join Hands With AppDost</h2>
-      <p>Together, let’s create impactful digital experiences and transform businesses globally.</p>
-      <div class="cta-buttons">
-        <a href="contact.html" class="btn primary">Start Your Project</a>
-        <a href="joinus.html" class="btn secondary">Join Our Team</a>
-      </div>
+  <!-- TEAM -->
+  <section class="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-grid">
+      <div class="member"><img src="ceo.jpg" alt="Team Member"><h4>Priyesranjan Sir</h4><p>Founder & CEO</p></div>
+      <div class="member"><img src="giude.png" alt="Team Member"><h4>Bajrangi Sir</h4><p>Guide</p></div>
+      <div class="member"><img src="hr.png" alt="Team Member"><h4>Rohit Raj</h4><p>HR</p></div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="wrap fwrap">
+    <div class="fwrap">
       <div class="fcol">
         <img src="logo.png" alt="AppDost" class="flogo" />
-        <p>Complete IT Solutions: Empowering innovation for a connected future.</p>
+        <p>Complete IT Solutions: Driving innovation for a better digital future.</p>
         <p class="copy">&copy; 2025 AppDost. All rights reserved.</p>
       </div>
-
       <div class="fcol">
-        <h4>Explore</h4>
+        <h4>Quick Links</h4>
         <ul>
           <li><a href="home.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Our Services</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
         </ul>
       </div>
-
       <div class="fcol">
-        <h4>Contact</h4>
+        <h4>Get in Touch</h4>
         <ul>
-          <li><a href="mailto:contact@appdost.com">contact@appdost.com</a></li>
-          <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+          <li><a href="mailto:contact@appdost.com">Email: contact@appdost.com</a></li>
+          <li><a href="tel:+1234567890">Phone: +1 (234) 567-890</a></li>
           <li><a href="contact.html">Request a Quote</a></li>
+          <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
-
       <div class="fcol">
         <h4>Follow Us</h4>
         <div class="soc">
@@ -631,38 +359,26 @@ nav .logo {
           <a href="#" class="s">T</a>
           <a href="#" class="s">L</a>
         </div>
+        <a class="btn secondary" href="joinus.html">Join Our Team</a>
       </div>
     </div>
   </footer>
 
-  <!-- SCRIPT -->
   <script>
-    const sbtn = document.getElementById('sbtn');
-    const slinks = document.getElementById('slinks');
-    sbtn.addEventListener('click', () => slinks.classList.toggle('open'));
+    const sbtn=document.getElementById('sbtn');
+    const slinks=document.getElementById('slinks');
+    sbtn.addEventListener('click',()=>slinks.classList.toggle('open'));
 
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const t = a.getAttribute('href');
-        if (t.length > 1) {
-          e.preventDefault();
-          document.querySelector(t).scrollIntoView({behavior:'smooth',block:'start'});
-          slinks.classList.remove('open');
-        }
-      });
-    });
-
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
+    // scroll animation
+    const obs=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
           e.target.classList.add('in');
           obs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.card, .wrap, .trusted, .about, .proj-card').forEach(el => obs.observe(el));
+    },{threshold:0.15});
+    document.querySelectorAll('.card,.member, .timeline li').forEach(el=>obs.observe(el));
   </script>
-
 </body>
 </html>

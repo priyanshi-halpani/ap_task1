@@ -7,85 +7,80 @@
   <link rel="stylesheet" href="services.css" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <style>
-    /* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+ * {
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #ffffff;
-  color: #e6edf3;
-  line-height: 1.6;
-}
+    html,
+    body {
+      height: 100%;
+    }
 
-/* ===== NAVBAR ===== */
-nav.scuh {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 1rem 2rem;
-  background: rgb(252, 252, 252);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 999;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
+    body {
+      font-size: 1.1rem;
+      margin: 0;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #0b1220;
+      background: linear-gradient(180deg, #fbfdff 0%, #f3f7fb 100%);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.75;
+    }
 
-nav .logo {
-  height: 40px;
-}
+    /* ---------- NAV ---------- */
+    .scuh {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 1.6rem;
+      gap: 1rem;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6));
+      box-shadow: 0 6px 18px rgba(20, 30, 50, 0.07);
+      backdrop-filter: blur(6px);
+    }
 
-.s-right a {
-  color: #e6edf3;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
+    .scuh .logo {
+      height: 40px;
+    }
 
-.s-right a:hover,
-.s-right a.active {
-  color: #00c2ff;
-}
+    .s-right {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
 
-.sbtn {
-  display: none;
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
+    .s-right a {
+      color: #0b1220;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+      padding: 0.5rem 0.6rem;
+      border-radius: 8px;
+      transition: all 0.22s ease;
+    }
 
-@media (max-width: 768px) {
-  .s-right {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: rgba(13, 17, 23, 0.95);
-    flex-direction: column;
-    display: none;
-    width: 100%;
-    text-align: center;
-    padding: 1rem 0;
-  }
-  .s-right.open {
-    display: flex;
-  }
-  .sbtn {
-    display: block;
-  }
-}
+    .s-right a:hover {
+      transform: translateY(-2px);
+      color: #4f46e5;
+      background: rgba(79, 70, 229, 0.06);
+    }
+
+    .sbtn {
+      display: none;
+      background: none;
+      border: 0;
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: 6px 8px;
+    }
 
 /* ===== HERO ===== */
 .hero {
   height: 90vh;
-  background: url("services-bg.jpg") center/cover no-repeat;
+  background: rgb(179, 219, 245);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,11 +100,11 @@ nav .logo {
 .hero-content p {
   max-width: 600px;
   margin: 0 auto 2rem;
-  color: #bfc6d2;
+  color: #0c244f;
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, #16b5ff, #615ae4);
+  background: linear-gradient(90deg, #16b5ff, #02020b);
   color: white;
   padding: 0.75rem 1.75rem;
   border-radius: 9999px;
@@ -119,6 +114,7 @@ nav .logo {
 }
 
 .btn-primary:hover {
+  background: linear-gradient(90deg,  #02020b, #16b5ff);
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(97, 90, 228, 0.3);
 }
@@ -220,32 +216,146 @@ nav .logo {
   color: #0e9ab2;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  background: #0a0e13;
-  padding: 3rem 2rem;
-  text-align: center;
+
+.soc-btn:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
+  box-shadow: 0 8px 20px rgba(56, 182, 241, 0.3);
 }
 
-.footer-logo {
-  height: 50px;
-  margin-bottom: 1rem;
+
+/* ---------- FOOTER ---------- */
+.footer{
+  background:linear-gradient(180deg,#4f46e5,#0b1220);
+  color:#e6eefc;
+   margin-top: 0.1rem;
+  padding:2.6rem 1rem;
+  font-size: 1.25rem;
+}
+.fwrap{
+  display:flex;
+  gap:2rem;
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 1rem;
+  flex-wrap:wrap;
+}
+.fcol{flex:1;min-width:200px;}
+.flogo{height:36px;filter:brightness(10) invert(1);margin-bottom:10px;}
+.footer h4{margin:0 0 10px 0;}
+.footer a{ font-size: 1.05rem; color:rgba(255,255,255,0.9);text-decoration:none;display:inline-block;margin-bottom:6px;}
+.footer .btn{margin-top:10px;}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1000px){
+  body {
+    font-size: 1.05rem;
+  }
+  .about h2 {
+    font-size: 1.4rem;
+  }
+  .cnum {
+    font-size: 1.7rem;
+  }
+  .ctxt {
+    font-size: 1rem;
+  }
+  .services h3 {
+    font-size: 1.2rem;
+  }
+  .card {
+    font-size: 1.05rem;
+  }
+  .cl {
+    font-size: 1.05rem;
+  }
+  .footer h4 {
+    font-size: 1.15rem;
+  }
 }
 
-.footer-content p {
-  color: #9ca3af;
-  margin-bottom: 1.5rem;
+@media (max-width:720px){
+  .s-right{display:none;}
+  .sbtn{display:block;}
+  .s-right.open{
+    display:flex;
+    position:absolute;
+    top:64px;
+    right:14px;
+    background:#fff;
+    padding:12px;
+    flex-direction:column;
+    border-radius:10px;
+    box-shadow:0 14px 40px rgba(2,6,23,0.12);
+  }
+
+
+  .hero-inner{padding:3rem 1rem;}
+  .hero{min-height:520px;}
+  .grid6{grid-template-columns:1fr;}
+  .wrap{text-align:left;padding-left:1rem;padding-right:1rem;}
+  .cbox {
+    padding: 20px 18px;
+    min-height: 90px; /* slightly smaller on mobile */
+  }
+  .cwrap{flex-direction:row;gap:12px;overflow:auto;padding:0 1rem;}
+   .proj-card { max-width: 100%; }
+  .ctawrap h2 { font-size: 1.8rem; }
+  .ctawrap p { font-size: 1rem; }
+  .cta-buttons { flex-direction: column; gap: 0.8rem; }
+}
+@media (max-width:420px){
+  .badge{font-size:0.75rem;padding:6px 10px;}
+  .hero-title{font-size:1.5rem;}
+  .hero-lead{font-size:0.95rem;}
+  .cnum{font-size:1.25rem;}
 }
 
-.socials a img {
-  width: 24px;
-  margin: 0 0.5rem;
-  opacity: 0.8;
-  transition: opacity 0.3s;
+/* ---------- animations ---------- */
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+.card,.cbox,.cl,.feat,.wrap{opacity:0;transform:translateY(18px);transition:all .6s cubic-bezier(.2,.9,.2,1);}
+.in{opacity:1;transform:translateY(0);}
+
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s;
+  background: #00c2ff;
+  color: #0a0f2d;
 }
 
-.socials a img:hover {
-  opacity: 1;
+.btn:hover {
+  background: #009ed0;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #00c2ff;
+}
+
+.btn.secondary:hover {
+  background: #00c2ff;
+  color: #0a0f2d;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #00c2ff;
+}
+
+.btn.secondary:hover {
+  background: #00c2ff;
+
+  color: #0a0f2d;
+  box-shadow: 0 0 15px rgba(0, 194, 255, 0.5);
+
 }
 
   </style>
@@ -253,19 +363,22 @@ footer {
 
 </head>
 <body>
-
-  <!-- ===== NAVBAR ===== -->
-  <nav class="scuh">
-    <img src="logo.png" alt="AppDost Logo" class="logo" />
-    <div class="s-right" id="nav-links">
+ <!-- NAV -->
+  <nav id="scuh" class="scuh">
+    <div class="s-left">
+      <img src="logo.png" alt="AppDost" class="logo" />
+    </div>
+    <div class="s-right" id="slinks">
       <a href="home.html">Home</a>
       <a href="about.html">About</a>
-      <a href="services.html" class="active">Services</a>
+      <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
+      <a href="joinus.html">Join Us</a>
       <a href="contact.html">Contact</a>
     </div>
-    <button class="sbtn" id="menu-btn">☰</button>
+    <button id="sbtn" class="sbtn" aria-label="toggle menu">☰</button>
   </nav>
+
 
   <!-- ===== HERO SECTION ===== -->
   <section class="hero">
@@ -318,6 +431,12 @@ footer {
           <h3>Cybersecurity</h3>
           <p>Protect your digital assets with cutting-edge security audits and solutions.</p>
         </div>
+        <div class="service-card">
+          <div class="icon"><img src="icons/uiux.svg" alt=""></div>
+          <h3>Internship</h3>
+          <p>We help students and freshers to gain experience on the real-world projects.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -334,26 +453,81 @@ footer {
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="footer-content">
-      <img src="logo.png" alt="AppDost Logo" class="footer-logo" />
-      <p>Empowering businesses through technology. © 2025 AppDost. All rights reserved.</p>
-      <div class="socials">
-        <a href="#"><img src="icons/facebook.svg" alt=""></a>
-        <a href="#"><img src="icons/linkedin.svg" alt=""></a>
-        <a href="#"><img src="icons/instagram.svg" alt=""></a>
+  
+ 
+  <!-- FOOTER -->
+  <footer id="contact" class="footer">
+    <div class="wrap fwrap">
+      <div class="fcol">
+        <img src="logo.png" alt="AppDost" class="flogo" />
+        <p>Complete IT Solutions: Driving innovation for a better digital future.</p>
+        <p class="copy">&copy; 2025 AppDost. All rights reserved.</p>
+      </div>
+
+      <div class="fcol">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#services">Portfolio</a></li>
+        </ul>
+      </div>
+
+      <div class="fcol">
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="mailto:contact@appdost.com">Email: contact@appdost.com</a></li>
+          <li><a href="tel:+1234567890">Phone: +1 (234) 567-890</a></li>
+          <li><a href="#contact">Request a Quote</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="fcol">
+        <h4>Follow Us</h4>
+        <div class="soc">
+          <a href="#" class="s">F</a>
+          <a href="#" class="s">T</a>
+          <a href="#" class="s">L</a>
+        </div>
+        <a class="btn secondary" href="#team">Join Our Team</a>
       </div>
     </div>
   </footer>
 
+
   <script>
-    // Mobile Nav
-    const menuBtn = document.getElementById("menu-btn");
-    const navLinks = document.getElementById("nav-links");
-    menuBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-    });
+    // Mobile nav toggle
+const sbtn = document.getElementById('sbtn');
+const slinks = document.getElementById('slinks');
+sbtn.addEventListener('click', () => slinks.classList.toggle('open'));
+
+// Smooth scroll for internal links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = a.getAttribute('href');
+    if (t.length > 1) {
+      e.preventDefault();
+      document.querySelector(t).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      slinks.classList.remove('open');
+    }
+  });
+});
+
+// Fade-in animations
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.card, .wrap, .trusted, .about, .cbox, .hero-feat .feat').forEach(el => {
+  obs.observe(el);
+});
   </script>
 
 </body>
